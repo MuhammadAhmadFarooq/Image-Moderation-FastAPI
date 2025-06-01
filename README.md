@@ -48,7 +48,7 @@ image-moderation-api/
 
 ```sh
 git clone <repository-url>
-cd image-moderation-api
+cd <folder-name>
 ```
 
 ### 2. Configure Environment Variables
