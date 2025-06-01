@@ -1,4 +1,4 @@
-from fastapi import HTTPException, Header
+from fastapi import HTTPException
 from app.database import tokens_collection
 
 
@@ -18,5 +18,7 @@ def validate_token(auth_header: str, require_admin: bool = False):
     if not token_doc:
         raise HTTPException(status_code=403, detail="Invalid token")
     if require_admin and not token_doc.get("isAdmin", False):
-        raise HTTPException(status_code=403, detail="Admin privileges required")
+        raise HTTPException(
+            status_code=403, detail="Admin privileges required"
+        )
     return token_doc
