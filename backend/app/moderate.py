@@ -10,7 +10,6 @@ moderate_router = APIRouter()
 def moderate_image(file: UploadFile = File(...), authorization: str = Header(...)):
     token_doc = validate_token(authorization)
 
-    # Simulated moderation logic (replace with ML model or API call)
     result = {
         "nudity": 0.85,
         "violence": 0.10,
